@@ -1,0 +1,833 @@
+//colors
+$text_color: #444;
+$color_link: #282828;
+$color_2: rgba(123, 195, 222, 0.5);
+$color_3: #578b9e;
+$color_4: #333;
+$color_5: white;
+$color_6: #555;
+$color_7: #fff;
+$color_8: #222;
+$color_9: #f8f8f8;
+$color_10: #ccc;
+$color_11: #c8c8c8;
+$color_12: #e0e0e0;
+$color_13: #a0a0a0;
+$color_14: #808080;
+
+//fonts
+$font_0: Source Sans Pro;
+$font_1: Helvetica;
+$font_2: Arial;
+$font_3: sans-serif;
+$monospace: monospace;
+$font_5: serif;
+$font_6: FontAwesome;
+$inconsolata: Inconsolata;
+$font_code: Inconsolata, monospace, serif;
+
+//urls
+$url_0: url(https://fonts.googleapis.com/css?family=Oswald|Inconsolata|Source+Sans+Pro:200,400,700);
+
+//@extend-elements
+//original selectors
+//html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+%reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+%hidden {
+  display: none;
+  visibility: hidden;
+}
+
+//original selectors
+//caption, th, td
+%extend_2 {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+//original selectors
+//.paragraph a, .admonitionblock a, .ulist a
+%extend_link {
+  color: $color_link;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: inset 0 -6px 0 $color_2;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.15s ease-in-out;
+  padding-bottom: 2px;
+  text-decoration: none;
+  outline: 0;
+}
+
+//original selectors
+//pre, .sources, .syntaxhighlighter
+%extend_4 {
+  display: block;
+  margin: 0.75em 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: $color_9 !important;
+  padding: 0.75em;
+}
+
+//original selectors
+//h1, h2
+%extend_5 {
+  font-size: 48px;
+  font-weight: 900;
+  margin-top: 1em;
+  line-height: 1.1em;
+  color: $color_8;
+  margin-bottom: 0.25em;
+}
+
+//original selectors
+//h3, h4, h5
+%extend_6 {
+  color: $color_8;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-top: 0.75em;
+  margin-bottom: 0.25em;
+}
+
+//original selectors
+//#masthead h1, #masthead h2, #masthead p.site-title
+%extend_7 {
+  font-size: 48px;
+  font-weight: 200;
+  margin-top: 1em;
+  line-height: 1.1em;
+  color: $color_8;
+  margin-bottom: 0.25em;
+}
+
+//original selectors
+//.ulist ul, .ulist ol, .ulist dl
+%extend_8 {
+  line-height: 1.5em;
+  list-style-position: outside;
+  color: $text_color;
+  //text-indent: -1em;
+  padding-left: 1em;
+}
+
+
+@import $url_0;
+html {
+  @extend %reset;
+  line-height: 1;
+}
+body {
+  @extend %reset;
+  font-family: $font_0, $font_1, $font_2, $font_3;
+  font-size: 16px;
+}
+div {
+  @extend %reset;
+}
+span {
+  @extend %reset;
+}
+applet {
+  @extend %reset;
+}
+object {
+  @extend %reset;
+}
+iframe {
+  @extend %reset;
+}
+h1 {
+  @extend %reset;
+  @extend %extend_5;
+}
+
+h2 {
+  @extend %reset;
+  @extend %extend_5;
+  &.screen-reader-text {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+h3 {
+  @extend %reset;
+  @extend %extend_6;
+  font-size: 30px;
+}
+h4 {
+  @extend %reset;
+  @extend %extend_6;
+}
+h5 {
+  @extend %reset;
+  @extend %extend_6;
+}
+h6 {
+  @extend %reset;
+}
+p {
+  @extend %reset;
+}
+blockquote {
+  @extend %reset;
+  quotes: none;
+  &:before {
+    content: "";
+    content: none;
+  }
+  &:after {
+    content: "";
+    content: none;
+  }
+}
+pre {
+  @extend %reset;
+  @extend %extend_4;
+  + p {
+    margin-top: 1.5em;
+  }
+}
+a {
+  @extend %reset;
+  text-decoration: none;
+  color: $text_color;
+  img {
+    border: none;
+  }
+  &:hover {
+    color: $color_3;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none;
+  }
+}
+abbr {
+  @extend %reset;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+acronym {
+  @extend %reset;
+}
+address {
+  @extend %reset;
+}
+big {
+  @extend %reset;
+}
+cite {
+  @extend %reset;
+}
+
+code {
+  @extend %reset;
+  font-family: $font_code;
+  font-size: 1em;
+}
+
+del {
+  @extend %reset;
+}
+dfn {
+  @extend %reset;
+}
+em {
+  @extend %reset;
+  font-style: italic;
+}
+img {
+  @extend %reset;
+}
+ins {
+  @extend %reset;
+}
+kbd {
+  @extend %reset;
+}
+q {
+  @extend %reset;
+  quotes: none;
+  &:before {
+    content: "";
+    content: none;
+  }
+  &:after {
+    content: "";
+    content: none;
+  }
+}
+s {
+  @extend %reset;
+}
+samp {
+  @extend %reset;
+}
+small {
+  @extend %reset;
+}
+strike {
+  @extend %reset;
+}
+strong {
+  @extend %reset;
+}
+sub {
+  @extend %reset;
+}
+sup {
+  @extend %reset;
+}
+tt {
+  @extend %reset;
+}
+var {
+  @extend %reset;
+}
+b {
+  @extend %reset;
+}
+u {
+  @extend %reset;
+}
+i {
+  @extend %reset;
+}
+center {
+  @extend %reset;
+}
+dl {
+  @extend %reset;
+}
+dt {
+  @extend %reset;
+}
+dd {
+  @extend %reset;
+}
+ol {
+  @extend %reset;
+  list-style: none;
+  &.index li {
+    height: 1.5em;
+  }
+}
+ul {
+  @extend %reset;
+  list-style: none;
+}
+li {
+  @extend %reset;
+}
+fieldset {
+  @extend %reset;
+}
+form {
+  @extend %reset;
+}
+label {
+  @extend %reset;
+}
+legend {
+  @extend %reset;
+}
+table {
+  @extend %reset;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption {
+  @extend %reset;
+  @extend %extend_2;
+}
+tbody {
+  @extend %reset;
+}
+tfoot {
+  @extend %reset;
+}
+thead {
+  @extend %reset;
+}
+tr {
+  @extend %reset;
+}
+th {
+  @extend %reset;
+  @extend %extend_2;
+}
+td {
+  @extend %reset;
+  @extend %extend_2;
+}
+article {
+  @extend %reset;
+  display: block;
+  &:not(:first-child) h2 {
+    border-top: $color_12 1px solid;
+    padding-top: 0.8em;
+  }
+}
+aside {
+  @extend %reset;
+  display: block;
+}
+canvas {
+  @extend %reset;
+}
+details {
+  @extend %reset;
+  display: block;
+}
+embed {
+  @extend %reset;
+}
+figure {
+  @extend %reset;
+  display: block;
+}
+figcaption {
+  @extend %reset;
+  display: block;
+}
+
+footer {
+  @extend %reset;
+}
+
+header {
+  @extend %reset;
+  display: block;
+  &#masthead {
+    position: fixed;
+    left: 680px;
+    width: 250px;
+  }
+}
+hgroup {
+  @extend %reset;
+  display: block;
+}
+menu {
+  @extend %reset;
+  display: block;
+}
+nav {
+  @extend %reset;
+  display: block;
+}
+output {
+  @extend %reset;
+}
+ruby {
+  @extend %reset;
+}
+section {
+  @extend %reset;
+  display: block;
+}
+summary {
+  @extend %reset;
+  display: block;
+}
+time {
+  @extend %reset;
+}
+mark {
+  @extend %reset;
+}
+audio {
+  @extend %reset;
+}
+video {
+  @extend %reset;
+}
+.address {
+  font-size: 1.1em;
+  line-height: 1.4em;
+}
+
+.paragraph {
+  line-height: 1.5em;
+  color: $text_color;
+  + {
+    &.paragraph {
+      margin-top: 1.5em;
+    }
+    &.admonitionblock {
+      margin-top: 1.5em;
+    }
+    &.ulist {
+      margin-top: 0em;
+    }
+    &.listingblock {
+      margin-top: -0.5em;
+    }
+  }
+  a {
+    @extend %extend_link;
+  }
+}
+
+.admonitionblock {
+  a {
+    @extend %extend_link;
+  }
+  + {
+    &.paragraph {
+        margin-top: 1.5em;
+    }
+    &.ulist {
+        margin-top: 1.5em;
+    }
+  }
+}
+
+.ulist {
+  .ulist {
+    margin-bottom: 0;
+  }
+  + {
+    &.admonitionblock {
+        margin-top: 1.5em;
+    }
+  }
+  a {
+    @extend %extend_link;
+  }
+  ul {
+    @extend %extend_8;
+    list-style-type: disc;
+    li p {
+      margin-bottom: 0; 
+    }
+  }
+  ol {
+    @extend %extend_8;
+  }
+  dl {
+    @extend %extend_8;
+  }
+}
+
+#content {
+  width: 600px;
+  position: relative;
+  float: left;
+  margin-left: 40px;
+  .text h2 {
+    margin-bottom: 0.25em;
+  }
+}
+
+input.submit, .button {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: $color_4;
+  padding: 5px 20px;
+  background-color: $text_color;
+  color: $color_5;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 3.5em;
+  text-decoration: none;
+  &:hover {
+    background-color: $color_6;
+    color: $color_7;
+    border-color: $color_8;
+  }
+  &:active {
+    background-color: $color_4;
+  }
+}
+
+.action {
+  margin-bottom: 1.5em;
+}
+
+.bright {
+  background-color: $color_9;
+  color: $text_color;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: $color_10;
+  &:hover {
+    background-color: $color_7;
+    color: $text_color;
+  }
+  &:active {
+    background-color: $color_11;
+    color: $text_color;
+  }
+}
+.sources {
+  @extend %extend_4;
+}
+.syntaxhighlighter {
+  @extend %extend_4;
+}
+.next {
+  float: right;
+  line-height: 1em;
+  margin-top: 15px;
+}
+.previous {
+  float: left;
+  line-height: 1em;
+  margin-top: 15px;
+}
+.nav {
+  margin-top: 1.5em;
+}
+.entry-header {
+  margin-bottom: 1.25em;
+  position: relative;
+}
+
+.entry-meta {
+  font-size: 0.8em;
+  color: $color_13;
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  color: #a0a0a0;
+  right: 100%;
+  width: 70px;
+  .posted-on {
+    .entry-date {
+      visibility: visible;
+      float: right;
+      font-size: 3em;
+      font-family: "Oswald";
+    }
+  }
+  .byline {
+    display: none;
+  }
+}
+
+.entry-footer {
+  font-size: 0.8em;
+  margin-top: 1em;
+  color: #888;
+  .cat-links, .tags-links, .edit-link {
+    @extend %hidden; 
+  }
+  .comments-link {
+    .screen-reader-text {
+      @extend %hidden;
+    }
+    &:before {
+      font-family: FontAwesome;
+      content: "\f0e6";
+      display: inline-block;
+      padding-right: 3px;
+      font-size: 1.5em;
+    }
+  }
+}
+
+
+.site-info {
+  @extend %hidden;
+}
+
+#masthead {
+  h1 {
+    @extend %extend_7;
+    a {
+      color: $color_13;
+    }
+  }
+  h2 {
+    @extend %extend_7;
+    font-size: 20px;
+    a {
+      color: $color_13;
+    }
+  }
+  input {
+    color: $color_13;
+  }
+  .screen-reader-text {
+    display: none;
+    visibility: hidden;
+  }
+  p.site-title {
+    @extend %extend_7;
+  }
+  .site-title a {
+    color: $color_13;
+  }
+}
+
+.widget_recent_entries {
+  font-size: 0.8em;
+  ul {
+    list-style: disc;
+    color: $color_14;
+    list-style-position: outside;
+    padding-left: 1em;
+    line-height: 1.5em;
+  }
+  li {
+    margin-bottom: 0.5em;
+  }
+}
+
+.skip-link {
+  display: none;
+  visibility: hidden;
+}
+
+nav.post-navigation {
+  margin-top: 2.5em;
+}
+
+.nav-links {
+  font-size: 0.75em;
+}
+
+.nav-previous {
+  display: inline-block;
+  &:before {
+    font-family: $font_6;
+    content: "\f100";
+    display: inline-block;
+    padding-right: 3px;
+  }
+}
+
+.nav-next {
+  float: right;
+  &:after {
+    font-family: $font_6;
+    content: "\f101";
+    display: inline-block;
+    padding-left: 3px;
+  }
+}
+
+.comments-area {
+  color: $text_color;
+  line-height: 1.5em;
+  font-size: 0.8em;
+  margin: 2em 0;
+  position: relative;
+
+  h3 {
+    font-size: 1.5em;
+  }
+  .logged-in-as {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .comment-form-comment {
+    label {
+      display: none;
+      visibility: hidden;
+    }
+    textarea {
+      width: 100%; 
+      border: solid 1px #e0e0e0;
+      margin-bottom: 1em;
+    }
+  }
+  .form-submit {
+    float: right;
+  }
+}
+
+.widget_search {
+  position: relative;
+
+  input {
+    &.search-submit {
+      display: none;
+      visibility: hidden;
+    }
+    &.search-field {
+      position: absolute;
+      top: -100px;
+      right: 7px;
+      border-radius: 12px;
+      border: solid 1px #e0e0e0;
+      padding: 4px;
+      width: 235px;
+    }
+  }
+}
+
+.listingblock {
+  code {
+    font-family: $font_code;
+  }
+  margin-bottom: 0;
+}
+
+@media only screen and(max-width: 960px) {
+  #content {
+    float: inherit;
+  }
+  .widget_recent_entries, .widget_tag_cloud {
+    display: none;
+    visibility: hidden;
+  }
+  header#masthead {
+    position: relative;
+    width: 600px;
+    float: inherit;
+    margin-left: 40px;
+    left: inherit;
+    right: inherit;
+  }
+}
+
+@media only screen and(max-width: 640px) {
+  #content {
+    width: 400px;
+    position: relative;
+    float: left;
+    margin-left: 10px;
+  }
+  h1 {
+    font-size: 36px;
+    margin-top: 0.5em;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  p {
+    line-height: 1.1em;
+  }
+  header#masthead {
+    width: 400px;
+    margin-left: 10px;
+  }
+  .paragraph + .paragraph {
+    margin-top: 1.25em;
+  }
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
